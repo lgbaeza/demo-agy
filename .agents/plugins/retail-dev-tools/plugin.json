@@ -1,0 +1,13 @@
+{
+  "id": "retail-dev-tools",
+  "name": "Retail Developer Tooling Plugin",
+  "version": "1.0.0",
+  "description": "Extensión que provee herramientas CLI de apoyo al entorno de desarrollo.",
+  "commands": [
+    {
+      "name": "validate-cart-schema",
+      "description": "Valida que el archivo JSON de entrada cumpla la estructura estándar del carrito de compras.",
+      "executable": "scripts/validate_cart.py"
+    }
+  ]
+}
