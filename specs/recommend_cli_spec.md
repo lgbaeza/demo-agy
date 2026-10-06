@@ -10,3 +10,11 @@ Desarrollar una aplicación de línea de comandos en Python que lea un carrito d
 ## 3. Contrato de Entrada y Salida (I/O)
 - **Estructura Input JSON**:
     Archivos de ejemplo en folder data
+- **Estructura Output JSON**
+    misma estructura original. mas una propiedad anidada llamada "recommendation":
+    {
+        "recommended_product": "",
+        "category": "",
+        "reasoning": "",
+        "affinity_score": 0.XX
+    }
