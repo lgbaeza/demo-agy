@@ -25,3 +25,4 @@ Los siguientes agentes están registrados para operar en este repositorio:
 Cualquier Agente de IA que genere o modifique código en este repositorio DEBE seguir estas reglas:
 - Escribir el codigo en el folder src/ seguido de un folder del caso de uso en desarrollo
 - Interactuar unicamente con un caso de uso a la vez, siguiendo las instrucciones del spec /specs que esta siendo procesado
+- Probar con base en la data del folder data con al menos 3 casos, si no hay suficiente data para cumplir con la cantidad de pruebas especificada, generar casos de prueba sintéticos, creando archivos en el folder data anteponiendo synt_ al nombre
