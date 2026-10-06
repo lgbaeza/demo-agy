@@ -127,19 +127,39 @@ Cuando le pides a Antigravity que desarrolle el caso de uso, el subagente `Retai
 
 ## 🚀 Cómo Ejecutar la Tarea en Antigravity
 
-En la consola o interfaz de chat de **Antigravity**, simplemente proporciona una instrucción como la siguiente:
+Clona el repositorio y abre antigravity
+```bash
+git clone
+cd agy-demo-inventory
+agy
+``` 
 
+En la consola o interfaz de chat de **Antigravity**, simplemente proporciona una instrucción como la siguiente. Observa el trabajo del agente para crear el archivo recommend.py
 ```text
-Lee agents.md y la especificación en specs/recommend_cli_spec.md.
-Utiliza al subagente RetailDevAssistant para construir la solución completa en src/recommend_cli_spec/recommend.py,
-validar los datos con retail-dev-tools, generar los datos de prueba sintéticos requeridos en data/ y ejecutar las 3 pruebas.
+crea la app con base en el spec recommend_cli_spec
 ```
 
-### ¿Qué sucederá automáticamente?
-- Antigravity delegará o asumirá el rol de **`RetailDevAssistant`**.
-- El subagente aplicará la skill **`py-cli-dev`** para garantizar buenas prácticas de código.
-- Llamará al script del plugin **`retail-dev-tools`** para validar los JSONs.
-- Creará los archivos `synt_*.json` y el script en `src/recommend_cli_spec/recommend.py`.
+Pide a agy que cree el archivo data/cart_102.json
+```json
+{
+  "cart_idd": "cart_102",
+  "itemss": [
+    "Leche entera 1L",
+    "Cereal de avena 500g"
+  ]
+}
+```
+
+Pide a agy que lance la aplicacion nuevamente, ahora con este nuevo archivo y mira lo que sucede. Se valida el esquema se identifica que está con problemas y es corregido para poder lanzar la app. Todo de forma orquestada por agy!
+```text
+ejecuta la app de recomendacion de productos con el archivo cart_102.json
+```
+
+### ¿Qué sucedió detrás de escena?
+- Antigravity delegó o asumió el rol de **`RetailDevAssistant`**.
+- El subagente aplicó la skill **`py-cli-dev`** para garantizar buenas prácticas de código.
+- Llamó al script del plugin **`retail-dev-tools`** para validar los JSONs.
+- Creó los archivos `synt_*.json` y el script en `src/recommend_cli_spec/recommend.py` para cumplir con los 3 casos de prueba mínimos.
 - Ejecutará las pruebas y te entregará el reporte final de cumplimiento.
 
 ---
